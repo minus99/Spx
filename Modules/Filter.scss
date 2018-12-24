@@ -1,0 +1,230 @@
+.kutuOzellikFiltre{
+    .kutuHeaderDefault, .kutuFooterDefault { display: none; }
+    .urunKiyaslamaOzellik_ozellik{
+        position: relative;
+        .urunKiyaslamaOzellik_ozellikAd{
+            cursor: pointer;
+            position: relative;
+            font-family: $bold;
+            padding:15px 40px 15px 0;
+            font-size: 15px;
+            border-top:solid 1px $lGray;
+            color: #000;
+            &:before{
+                content:'\e915';
+                font-family:'icomoon';
+                font-size: 8px;
+                color: #000;
+                position: absolute;
+                top: 50%;
+                margin-top: -4px;
+                right: 0;
+            }
+            &.kapali{
+                &:before{
+                    content:'\e91f';
+                }
+            }
+            .mobile-element {display:none;}
+        }
+        .urunKiyaslamaOzellik_temizle{
+            position: absolute;
+            top: 16px;
+            right: 25px;
+            width: 14px;
+            height: 14px;
+            a{
+                display: inline-block;
+                span{
+                    i, i:before{
+                        font-size: 14px;
+                    }
+                    i:before{
+                        color: $aGray;
+                    }
+                }
+            }
+        }
+        .urunKiyaslamaOzellik_ozellikIcerik{ 
+            table{
+                > tbody{
+                    > tr{
+                        display: table;
+                         > td{
+                             width: auto;
+                             text-align: left;
+                             a{
+                                 display: block;
+                                 padding: 10px 10px 10px 25px;
+                                 font-family: $medium;
+                                 font-size: 15px;
+                                 position: relative;
+                                 color: $aGray;
+                                 img{
+                                     display: none;
+                                 }
+                                 &:before{
+                                    font-family:'icomoon';
+                                    content:'\e92a';
+                                    display:inline-block;
+                                    font-size: 15px;
+                                    color: $aGray;
+                                    position: absolute;
+                                    top: 50%;
+                                    left: 0;
+                                    width: 15px;
+                                    height: 15px;
+                                    margin-top: -7.5px;
+                                }
+                                 &:hover{
+                                    color: $Gray41;
+                                 }
+                                 &.link_selected{
+                                    color: $Gray41;
+                                    &:before{
+                                        content: '\e92b';
+                                        color: $btnColor;
+                                    }
+                                 }
+                             }
+                         }
+                     }
+                }
+            }
+        }
+        /*&.colorFilterBar{
+            .urunKiyaslamaOzellik_ozellikIcerik{ 
+                padding-bottom: 10px;
+                table{
+                    > tbody{
+                        > tr{
+                            display: table;
+                             > td{
+                                 width: auto;
+                                 text-align: left;
+                                 a{
+                                     padding: 0;
+                                     width: 52px;
+                                     height: 30px;
+                                     overflow: hidden;
+                                     position: relative;
+                                     display: block;  
+                                     margin-bottom: 5px;
+                                     .urunKiyaslamaOzellik_ozellikImgAd{display:none;}
+                                     img{
+                                         display: block;
+                                         position: absolute;
+                                         width: 100%;
+                                         height: auto;
+                                         top: 0;
+                                    }
+                                     &:before{display: none;}
+                                     &.link_selected{
+                                        img{
+                                            top: -30px;
+                                        }
+                                     }
+                                 }
+                             }
+                         }
+                    }
+                }
+            }
+        }*/
+    }
+}
+
+@media screen and (min-width: 850px){
+    .kutuOzellikFiltre{
+        .urunKiyaslamaOzellik_ozellikIcerik{
+            > table{
+                overflow-x: hidden;
+                max-height: 180px;
+                display: block;
+                tbody{display:block;}
+            }
+        }
+        .urunKiyaslamaOzellik_ozellik{
+            ::-webkit-scrollbar {
+                width: 6px;
+            }
+            ::-webkit-scrollbar-track {
+                -webkit-border-radius: 3px;
+                border-radius: 3px;
+                background: rgba(242,242,255,1);
+                -webkit-box-shadow: inset 0 0 6px rgba(242,242,255,0.9);
+                box-shadow: inset 0 0 6px rgba(242,242,255,0.9); 
+            }
+            ::-webkit-scrollbar-thumb {
+                -webkit-border-radius: 3px;
+                border-radius: 3px;
+                background: rgba(0,84,255,1);
+                -webkit-box-shadow: inset 0 0 6px rgba(0,84,255,0.9);
+                box-shadow: inset 0 0 6px rgba(0,84,255,0.9); 
+            }
+            ::-webkit-scrollbar-thumb:window-inactive {
+                background: rgba(242,242,255,1); 
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $breakpointXSM){
+    .kutuOzellikFiltre{
+        .kutuBodyOzellikFiltre{
+            > table > tbody > tr{
+                border-top: 1px solid #ededed;
+                > td{
+                    > .urunKiyaslamaOzellik_ozellik {
+                        padding: 0 20px;
+                    }
+                }
+            }
+        }
+        .urunKiyaslamaOzellik_ozellik{
+            .urunKiyaslamaOzellik_ozellikAd{
+                padding-right: 50px;
+            }
+            .urunKiyaslamaOzellik_temizle{
+                right: 55px;
+            }
+            &.default{
+                .urunKiyaslamaOzellik_ozellikIcerik{ 
+                    table{
+                        > tbody{
+                            >{
+                                tr{
+                                    > td{
+                                        a{
+                                            padding: 26px 46px 25px 40px;
+                                            font-size: 17px;
+                                            border-bottom:1px solid #ededed;
+                                            &:before{
+                                                width: 18px;
+                                                height: 18px;
+                                                border: solid 2px #ababab;
+                                                left: inherit;
+                                                right: 28px;
+                                                margin-top: -9px;
+                                                border-radius: 100%;
+                                            }
+                                            &.link_selected{
+                                                &:before{
+                                                    border-color: transparent;
+                                                }
+                                            }
+                                            &:hover{
+                                                text-decoration: underline;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

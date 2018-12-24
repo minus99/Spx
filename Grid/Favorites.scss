@@ -1,0 +1,73 @@
+.ems-page {
+    &-member{
+        .ems-grid-favorites{
+            .ems-grid-header {
+                padding: 5px 0 !important;
+                .col-1{width:100px;}
+                .col-2{width:34%; text-align: left;}
+                .col-3{width:22%;}
+                .col-4{width:22%;}
+                .col-5{width:10%; 
+                    span {
+                        display: none;
+                    }
+                }
+            }
+            .ems-grid-row{
+                text-align: center;
+                padding: 19px 0 !important;
+                .col-1{width:100px;}
+                .col-2{width:34%;}
+                .col-3{width:22%;}
+                .col-4{width:22%;}
+                .col-5{width:10%;}
+                .ems-name{
+                    font-size: 15px;
+                    color: #000;
+                    text-align: left;
+                    font-family: $medium;
+                }
+                a.btnFavoriListeSil{
+                    span {
+                        color: #9b9b9b;
+                    }
+                    i {
+                        &:before {
+                            font-size: 20px;
+                        }
+                    }
+                }
+            } 
+        }
+    }
+}
+
+@media screen and (max-width: $breakpointXSM){
+    .ems-page {
+        &-member{
+            .ems-grid-favorites{
+                .ems-grid-header{
+                    .col-1{
+                        height: 100px !important;
+                    }
+                }
+                .ems-grid-row{
+                    min-height: 140px;
+                    padding-left: 110px !important;
+                    padding-right: 35px !important;
+                    .col-1{
+                        height: 100px !important;
+                    }
+                    .col-2, .col-3, .col-4{width:100%; padding:0;}
+                    .col-5{
+                        width: 12%;
+                        position: absolute;
+                        top: 20px;
+                        right: 0;
+                        z-index: 1;
+                    }
+                }
+            }
+        }
+    }
+}

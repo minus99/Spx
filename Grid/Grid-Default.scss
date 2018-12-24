@@ -1,0 +1,405 @@
+.ems-page {
+    &-member{
+        .ems-grid-default {
+            /*border-top: 3px solid #ededed;
+            border-bottom: 3px solid #ededed;*/
+            background: $lGray;
+            margin-bottom: 15px;
+            .ems-grid-header {
+                display: none;
+                background: #fff;
+                width: 100%;
+                padding: 5px 20px;
+                text-align: center;
+                table-layout: fixed;
+                > div {
+                    display: table-cell;
+                    font-size: 13px;
+                    font-family: $bold;
+                    color:$aGray;
+                }
+                &:first-child {
+                    display: table;
+                }
+            }
+            .ems-grid-row {
+                padding: 30px;
+                border: 1px solid $inputborder;
+                display: table;
+                table-layout: fixed;
+                width: 100%;
+                font-size: 15px;
+                > div {
+                    display: table-cell;
+                    vertical-align: middle;
+                    font-family: $regular;
+                    color: #000;
+                    text-align: center;
+                }
+                .ems-grid-img {
+                    width: 72px;                    
+                    border: 1px solid $edGray;
+                    text-align: center;
+                    display: inline-block;
+                    a {display: inline-block;}
+                    img {
+                        max-height: 72px;
+                    }
+                }
+                .ems-grid-name {
+                    padding: 0 20px;
+                    span {
+                        font-size: 13px;
+                        font-family: $regular;
+                    }
+                    a {
+                        span {
+                            &.prdItem {
+                                font-family: $bold;
+                                font-size: 15px;
+                            }
+                        }
+                    }
+                }
+                .ems-grid-code {
+                    a {
+                        font-size: 13px;
+                        font-family: $regular;
+                        margin-top: 5px;
+                        display: block;
+                    }
+                }
+                .ems-grid-piece {
+                    width: 25%;
+                    text-align: center;
+                    input {
+                        width: 100% !important;
+                        max-width: 65px;
+                        border: 1px solid $lDark;
+                        text-align: center;
+                        position: relative;
+                        top: -3px;
+                        height: 30px;
+                    }
+                    a {
+                        border: 1px solid $inputborder;
+                        display: inline-block;
+                        padding: 7px;
+                        color: $inputborder;
+                        height: 30px;
+                        &:hover {
+                            background: $fdYellow;
+                            color: $lDark;
+                            border: 1px solid $fdYellow;
+                        }
+                    }
+                }
+                .ems-grid-price-total {
+                    width: 20%;
+                    text-align:center;
+                    font {
+                        text-align: center;
+                        &.brutFiyat {
+                            text-decoration: line-through;
+                        }
+                    }
+                }
+                .ems-price{
+                    color: #221e1f;
+                }
+                .ems-grid-delete {
+                    width: 10%;
+                    text-align: right;
+                    padding-right: 10px;
+                }
+                &:last-child {
+                    /*border: 0;*/
+                }
+                .kdvDahil{display: none;}
+                .ems-grid-order-no {
+                    a {
+                        font-family: $bold;
+                    }
+                }
+            }
+        }
+        .same-address{display: none;}
+        .add-new-address {
+            .btnAdresEkle {
+                font-family: $regular;
+                padding: 0;
+                margin: 20px 0;
+                width: auto;
+                background: none;
+                span {
+                    letter-spacing: 0;
+                    font-size: 14px;
+                    color:$btnColor;
+                    text-decoration: underline;
+                    text-transform: none;
+                }
+                &:hover {
+                    background: none;
+                    span {
+                        color: $btnAlternateColor;
+                    }
+                }
+            }
+        }
+        a.btnTakipListeStokTumSil, a.btnFavoriListeTumSil{
+            /*background: $edGray;
+            font-family: $regular;
+            padding: 10px 20px;*/
+            margin: 20px 0 0 0;
+            width: auto;
+            span {
+                letter-spacing: 0;
+                font-size: 13px; 
+                /*color: $darkBlack;*/
+            }
+            &:hover {
+                background: $lDark;
+                span {
+                    color: #fff;
+                }
+            }
+        }
+        .ems-grid-order-products {
+            background: none;
+            .ems-grid-header{
+                display: table;
+                width: 100%;
+                padding: 5px 20px;
+                text-align: center;
+                table-layout: fixed;
+                margin-top: 20px;
+                > div {
+                    display: table-cell;
+                    font-size: 12px;
+                    font-family: $bold;
+                    color:$aGray;
+                    &.ems-grid-img {
+                        width: 11%; 
+                        span {
+                            display: none;
+                        }
+                    }
+                    &.ems-grid-name {
+                        width: 35% !important;
+                        padding: 0 20px 0 40px; 
+                        text-align: left;
+                    }
+                    &.ems-grid-price-total {
+                        width: auto;
+                    }
+                }
+            }
+            .ems-grid-row {
+                display: table;
+                width: 100%; 
+                padding: 10px 20px;
+                text-align: center;
+                background: $lGray;
+                > div {
+                    display: table-cell;
+                    text-align: center;
+                    &.ems-grid-name {
+                        width: 35% !important;
+                        text-align: left;
+                    }
+                    &.ems-grid-price-total {
+                        width: auto;
+                    }
+                }
+            }
+        }
+        .page-order-cancel {
+            .ems-grid-piece0 {
+                padding: 0 5px;
+            }
+            .ems-grid-name {
+                width: 35% !important;
+            }
+                .order-detail-info {
+                  border-width: 1px 0 0 1px;
+                  border-style: solid;
+                  border-color: #d8d8d8;
+                  margin-bottom: 20px;
+                  > div {
+                    display: inline-block;
+                    width: 50%;
+                    vertical-align: top;
+                    > div {
+                      display: inline-block;
+                      vertical-align: top;
+                      width: 50%;
+                      padding: 10px;
+                      font-size: 14px;
+                      color: #000;
+                      border-right: 1px solid #d8d8d8;
+                      word-break: break-word;
+                      &.text {
+                        font-family: $medium;
+                        background: #f0f3f5;
+                        border-bottom: 1px solid #d8d8d8;
+                      }
+                      &.value {
+                        font-family: $regular;
+                        border-bottom: 1px solid #d8d8d8;
+                      }
+                      &:empty:before {
+                        content: "-";
+                      }
+                    }
+                    &.cargo-no .text, &.bank-point .text {
+                      border-bottom-color: #d8d8d8;
+                    }
+                  }
+                }
+                .order-cancel-button {
+                    width: 100%;
+                    a {
+                        width: auto;
+                        margin-right: 20px;
+                        float: left;
+                    }
+                    > span {
+                        display: block;
+                        padding-top: 15px;
+                    }
+                }
+                .ems-grid-order-products {
+                    margin: 20px 0;
+                    display: inline-block;
+                    width: 100%;
+                }
+                .order-address {
+                  border: 1px solid #d8d8d8;
+                  display: inline-block;
+                  width: 50%;
+                  padding: 30px;
+                  font-family: $medium;
+                  color: #000;
+                  margin: 30px 0;
+                  &.order-address-billing {
+                    border-left: none;
+                  }
+                  .text {
+                    font-size: 13px;
+                    margin-bottom: 15px;
+                  }
+                  .value {
+                    font-size: 16px;
+                  }
+                }
+                .inner-title {
+                  font-family: $bold;
+                  font-size: 16px;
+                  text-align: center;
+                }
+                .order-detail-info-payment {
+                  /*border: 1px solid #d8d8d8;*/
+                  margin-top: -1px;
+                  > div {
+                    text-align: right;
+                    > div {
+                      display: inline-block;
+                      vertical-align: middle;
+                      padding: 10px 30px;
+                      &.text {
+                        width: 300px;
+                        text-align: left;
+                        font-family: $regular;
+                        font-size: 15px;
+                      }
+                      &.value {
+                        width: 160px;
+                        font-family: $bold;
+                        font-size: 18px;
+                      }
+                    }
+                    &.total {
+                      .text {
+                        font-family: $bold;
+                      }
+                      .value {
+                        font-size: 24px;
+                        white-space: nowrap;
+                      }
+                    }
+                  }
+                }
+            .page-top-title {
+                margin-bottom:20px;
+            }
+            .bottom-step {
+                a {
+                    width: auto;
+                }
+            }
+        }
+        .remove-list, .btnFavoriListeTumSil {}
+    }
+}
+
+@media screen and (max-width: $breakpointXSM){
+    .ems-page {
+        &-member{
+            .ems-grid-default {
+                border-top: none;
+                border-bottom: none;
+                background: none;
+                .ems-grid-header {
+                    display: inline-block!important;
+                    width: 120px;
+                    padding: 0!important;
+                    vertical-align: top;
+                    border: 1px solid $inputborder;
+                    margin-right: -1px;
+                    margin-top: 0;
+                    margin-bottom: 20px;
+                    background: $lGray;
+                    > div {
+                        display: block;
+                        height: 50px !important;
+                        font-size: 15px;
+                        font-family: $medium;
+                        color: #000;
+                        border-bottom: 1px solid $inputborder;
+                        padding: 15px 0 0 10px !important;
+                        max-width: none !important;
+                        width: 100% !important;
+                        text-align: left !important;
+                        &.ems-grid-detail {
+                            border-bottom:0;
+                        }
+                    }
+                }
+                .ems-grid-row {
+                    display: inline-block!important;
+                    width: calc(100% - 120px);
+                    padding: 0!important;
+                    vertical-align: top;
+                    margin-bottom: 20px;
+                    background: $lGray;
+                    > div {
+                        display: block;
+                        height: 50px !important;
+                        border-bottom: 1px solid $inputborder;
+                        padding: 15px 0 0 20px !important;
+                        position: static !important;
+                        transform: none !important;
+                        width: 100% !important;
+                        max-width: none !important;
+                        text-align: left !important;
+                        text-align-last: left !important;
+                        &.ems-grid-detail {
+                            border-bottom:0;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}

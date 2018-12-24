@@ -1,0 +1,339 @@
+::selection {background: #cc0000; color: #FFFFFF; text-shadow: 0 1px 3px #4a536c;}
+::-moz-selection {background: #cc0000; color: #FFFFFF; text-shadow: 0 1px 3px #4a536c;}
+
+body { -webkit-font-smoothing: antialiased; -moz-font-smoothing: none; color:#000; font-family: $regular; }
+span.pb2, span.pb3 {display:none;}
+
+span[id$='lbfURN_KDVDAHILSATIS'], span[id$='lbfURN_KDVDAHILSATISILK']  {display:none;}
+
+i {	font-style: normal; }
+
+a {@include transition(all 0.2s ease); outline:none;}
+
+b {font-weight: 700;}
+
+body table{ width: 100%; table-layout: fixed; border-collapse: collapse; }
+body table, thead, tbody, tr { width: 100%; }
+
+/*Styler*/
+input.sCheckbox {display:none !important;} 
+body { overflow-x: hidden; }
+
+.vail {
+	visibility: hidden;
+	position:fixed; 
+	left:0; 
+	top:0; 
+	z-index:9; 
+	background:#000; 
+	width:100%; 
+	height:100%;
+	opacity: 0;
+	transition: opacity 333ms ease-in-out;
+    -moz-transition: opacity 333ms ease-in-out;
+    -webkit-transition: opacity 333ms ease-in-out;
+}
+
+//item list
+[class*="item-"] {
+	 > * {
+		display: inline-block;
+		vertical-align: top;
+	}
+	&.item-2 > * {
+		width: 50%;
+	}
+	&.item-3  > * {
+		width: (100% / 3);
+	}
+	&.item-4  > * {
+		width: 25%;
+	}
+}
+
+.vAlign {
+	@include vAlign;
+}
+
+.hourglass {display:none;}
+
+.filter-ajx-loading { 
+	&:after {
+		content:'';
+		width:100%;
+		height:100%;
+		position:fixed;
+		top:0;
+		left:0;
+		z-index:9998;
+		background:url(#{$baseHref + "/images/ajaxtabs/pageLoading.gif"}) center center no-repeat rgba(255,255,255,.5);
+	}
+}
+
+.loading-holder {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 997;
+	background: rgba(0red, 0, 0, .7);
+	.loading-content {
+		@include vAlign;
+		text-align: center;
+		font-size: 25px;
+		color: #fff;
+		width: 100%;
+		margin: 0 auto;
+		padding: 20px;
+	}	
+}
+
+.ems-message{
+	&:empty{ display: none; }
+	&-success{
+		background:green;
+	}
+	&-error{
+		background:red;
+		margin-bottom: 20px;
+	}
+	&-warning{
+		background:#fdde00;
+		color: #231f20 !important;
+	}
+}
+
+.ems-message {
+	padding: 15px;
+	color: #ffffff;
+	border-radius: 3px;
+	b{ font-weight: normal; font-family: $bold; }
+}
+
+.ems-message, .pageLogin_yeniUyelikHata, .pageErrorUyeSifre, .pageErrorSifremiUnuttum, .pageSifremiUnuttum_mesaj, .ems-page-new-address .pageErrorDefault {
+	b{ font-weight: normal; font-family: $bold; }
+}
+
+.pageLogin_yeniUyelikHata { color: inherit !important;	b { font-weight: normal; } }
+
+.pageUyeBasarili{
+	margin: 0 auto;
+	width: 100%;
+	margin-top: 30px;
+	.pageHeaderUyeBasarili{
+		display: none;
+	}
+	.ems-member-page-logo{
+		background: #f8f8f8;
+		text-align: center;
+		padding-bottom: 20px;
+    	padding-top: 20px;
+		a{ display: inline-block; }
+	}
+	.ems-message{
+		text-align: center;
+		font-size: 16px;
+		line-height: 22px;
+		font-family: $regular;
+		margin: 20px 15% 50px 15%;
+		width: 70%;
+		color: $lGray;
+		background: none;
+	}
+}
+.zorunluFont {
+	&:before {
+		content: "*";
+		color: #faae17;
+		margin-right: 5px;
+		font-size: 14px;
+		vertical-align: sub;
+	}
+}
+
+.page-top-title, .pageHeaderDefault {
+    position: relative;
+    display: block;
+	font-size: 15px;
+	font-family: $bold;
+    + .page-top-desc, + .pageDescDefault {
+        margin-top: 20px; 
+    }
+}
+.page-top-desc, .pageDescDefault {
+	font-size: 12px;
+	padding-bottom: 20px;
+	display: inline-block;
+	width: 100%;
+	color: #727272;
+}
+.inner-title {
+	font-size: 20px;
+	padding-bottom: 20px;
+}
+
+.margin-top{
+	margin-top: 10px;
+	&-20{
+		margin-top: 20px;	
+	}
+	&-25{
+		margin-top: 25px;	
+	}
+	&-30{
+		margin-top: 30px;	
+	}
+	&-35{
+		margin-top: 35px;	
+	}
+	&-40{
+		margin-top: 40px;	
+	}
+}
+
+.emos-confirm {
+	border-radius: 0 !important;
+	.ui-dialog-titlebar {
+		border: 0 !important;
+		.ui-dialog-title {
+			font-size: 18px;
+			font-weight: normal !important;
+			padding: 20px 0 30px 0;
+			text-align: center;
+			display: block;
+		}
+	}
+	.ui-dialog-content {
+		padding: 40px 30px 80px !important;
+		font-size: 14px !important;
+	}
+	.ui-dialog-buttonpane {
+		.ui-dialog-buttonset {
+			button {
+    			border-radius: 3px !important;
+				&:last-child {
+					border-radius: 3px !important;
+					border: 0 !important;
+					background: #f05201 !important;
+					span {
+						color: #fff !important;
+					}
+					&:hover {
+						border: 0 !important;
+						background: #00579c !important;
+					}
+					&.ui-state-hover{
+						border: 0 !important;
+					}
+				}
+			}
+		}
+	}
+}
+
+.ui-datepicker .ui-datepicker-title select{ padding:0 !important; }
+
+.sub { display: none; }
+
+.ems-page-default{	padding: 45px 10px 45px 10px; }
+
+.ems-container-small{
+	width: 100%;
+	max-width: 1220px;
+	margin: 0 auto;
+}
+
+.ems-container-flex{
+	@include flex();
+	flex-wrap: wrap;
+}
+
+.ems-clone{
+	> div {
+		display: block;
+	}
+    &:empty{ display: none; }
+}
+
+.ems-border-radius{
+	border-radius: 2px;
+}
+.ems-top-scroll{
+	a.btnDefaultTopScroll{
+		cursor: pointer;
+		background:#000;
+		padding-top: 18px;
+		padding-bottom: 17px;
+		border-radius: 0;
+		span{
+			font-family:$medium;
+			text-transform:capitalize;
+			margin-right:10px;
+		}
+		i, i:before{
+			font-size:10px;
+		}
+		i{
+			display: inline-block;
+			&:before{color:#fff;}	
+		}
+	}
+}
+
+@include keyframes (favoriIcons) {
+	0% { transform: scale(1.0);}
+    100% { transform: scale(1.1); }
+}
+
+@include keyframes (opacityVail) {	
+	0% { display: block; opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@include keyframes (cart) {
+	0% {opacity: 0;}
+	1%{display: block;}
+	100%{ opacity: 1; }
+}
+
+.vl_30_i, .vl30k{display: none !important;}
+
+@media screen and (min-width: 850px){
+	.mobile-element{
+		display: none !important;
+		&-fixed-user{
+			display: inherit;
+		}
+	}
+}
+
+@media screen and (max-width: 850px){
+	.desktop-element{
+		display: none !important;
+	}
+}
+
+@media screen and (max-width: $breakpointXSM){
+
+	.margin-top{
+		margin-top:0 !important;
+	}
+
+	.page-top-desc, .pageDescDefault,
+	.page-top-title, .pageHeaderDefault{
+		display: none;
+	}
+	
+	.ems-message{
+		font-size: 14px;
+		padding: 10px;
+	}
+	.vail{z-index: 10;}
+	.vailCart{
+		display: none;
+	}
+	.vailLogin{
+		background: #000;
+	}
+}

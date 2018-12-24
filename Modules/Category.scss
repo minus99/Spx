@@ -1,0 +1,251 @@
+.kutuSolMenuTree {
+    .sStylerMainWrp.sStylerWrp_select, .kutuHeaderSolMenuTree{display:none;}
+}
+
+.kutuBodySolMenuTree {
+    background: #fff;
+    border:1px solid $inputborder;
+    
+    h2, .mobile-title{display:none;}
+    > ul {
+       > li.sev2 {
+        > a {display: none !important;}
+       }  
+    }
+    ul{
+        > li{
+            border-bottom:1px solid $inputborder;
+            a{
+                display: block;
+                font-size: 15px;
+                color: #727272;
+                font-family: $bold;
+                padding: 17px 10px 17px 27px;
+                position: relative;
+                &:before{
+                    content: '';
+                    width: 8px;
+                    height: 8px;
+                    background: transparent;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                }
+            }
+            &.act{
+                a{
+                    font-family: $bold;
+                    color: $btnColor;
+                    &:before{
+                        width: 4px;
+                        height: 50px;
+                        background: $btnColor;
+                        left: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.kutuKategori{
+    .kutuHeaderKategori{
+        > span{
+            a{
+                color: #000;
+                background: none;
+                padding: 15px 15px 15px 0;
+                text-align: left;
+                position: relative;
+                text-transform: inherit;
+                span:first-child{
+                    display: block;
+                    i{display:none;}
+                }
+                &:before{
+                    content:'\e915';
+                    font-family:'icomoon';
+                    font-size: 8px;
+                    color: #000;
+                    position: absolute;
+                    top: 50%;
+                    margin-top: -4px;
+                    right: 0;
+                }
+            }
+        }
+        &.kapali{
+            > span{
+                a{
+                    &:before{
+                        content:'\e91f';
+                    }
+                }
+            }
+        }
+    }
+    ul.menuKategori{
+        padding-bottom: 20px;
+        > li{
+            b{ display:none; }
+            a{
+                display: block;
+                padding: 10px 10px 10px 25px;
+                position: relative;
+                font-size: 15px;
+                position: relative;
+                color: $aGray;
+                &:before{
+                    font-family:'icomoon';
+                    content:'\e92a';
+                    display:inline-block;
+                    font-size: 15px;
+                    color: $aGray;
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    width: 15px;
+                    height: 15px;
+                    margin-top: -7.5px;
+                }
+                &.active{
+                    font-family: $medium;
+                    color: $Gray41;
+                    &:before{
+                        content: '\e92b';
+                        color: $btnColor;
+                    }
+                }
+                &:hover{
+                    color: $Gray41;
+                }
+            }
+            &.sel.s1{
+                > a {display:none;}
+            }
+            &.sub{ display: block; }
+        }
+        > li > *{ display: none; }
+        > li.s1 > ul{ display:block !important;}
+        > li{
+            ::-webkit-scrollbar {
+                width: 6px;
+            }
+            ::-webkit-scrollbar-track {
+                -webkit-border-radius: 3px;
+                border-radius: 3px;
+                background: rgba(242,242,255,1);
+                -webkit-box-shadow: inset 0 0 6px rgba(242,242,255,0.9);
+                box-shadow: inset 0 0 6px rgba(242,242,255,0.9); 
+            }
+            ::-webkit-scrollbar-thumb {
+                -webkit-border-radius: 3px;
+                border-radius: 3px;
+                background: rgba(0,84,255,1);
+                -webkit-box-shadow: inset 0 0 6px rgba(0,84,255,0.9);
+                box-shadow: inset 0 0 6px rgba(0,84,255,0.9); 
+            }
+            ::-webkit-scrollbar-thumb:window-inactive {
+                background: rgba(242,242,255,1); 
+            }
+            > ul{
+                max-height: 216px;
+                overflow-x: hidden !important;
+                overflow-y: auto !important;
+                padding-left: 15px;       
+            }
+        }
+    }
+}
+
+.kutuSolMenuTree{
+    .sStylerMainWrp.sStylerWrp_select, .kutuHeaderSolMenuTree{display:none;}
+    .kutuBodyDefault{
+        > ul{
+            > li{
+                b{display:none;}
+                > a{
+                    display: none;
+                }
+                > ul{
+                    display: inline-block;
+                    width: 100%;
+                    table-layout: fixed;
+                    > li{
+                        width: 100%;
+                        display: inline-block;
+                        vertical-align: middle;
+                        text-align: center;
+                        overflow: hidden;
+                        position: relative;
+                    
+                        a{
+                            display: block;
+                            display: block;
+                            text-align: left;
+                            padding: 17px 10px 17px 27px;
+                        }
+                        
+                        &.act, &:hover{
+                            &:after{
+                                bottom: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+@media screen and (max-width: $breakpointXSM){
+    .kutuKategori{
+        padding: 0 20px;
+        .kutuHeaderKategori{
+            > span{
+                a{  
+                    .mobile-element{
+                        &-filter-span-select{
+                         display: none;
+                        }
+                    }
+                }
+            }
+        }
+        ul.menuKategori{
+            padding-bottom: 10px;
+            li a{
+                font-size: 14px;
+            }
+            > li{
+                > a{
+                   font-size: 14px;
+                }
+                > a.active{
+                    font-family: $bold;
+                    border: none;
+                }
+            }
+        }
+    }
+    .kutuSolMenuTree{
+        .sStylerMainWrp.sStylerWrp_select{
+            display: block;
+            .sStylerWrp{
+                line-height: 22px;
+                height: 50px;  
+                background: #fff;
+                font-size: 18px;
+                font-family: $bold;
+                border: none;
+                padding-left: 20px;
+                padding-right: 20px;
+                border-bottom: 2px solid $border;
+            }
+        }
+        .kutuBodyDefault{display:none;}
+    }
+}

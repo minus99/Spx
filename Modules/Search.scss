@@ -1,0 +1,389 @@
+.mod-mini-search{
+    margin-right: 130px;
+    width: auto;
+    &-footer, &-header{
+        display: none;
+    }
+    .ems-form{
+        .ems-field{
+            margin-bottom: 0;
+            input{
+                padding-left: 45px;
+                background: #fff;
+                border: none;
+                height: 40px;
+                line-height: 30px;
+                border:1px solid #f1f1f1;
+                color: #000;
+            }
+            &.submit{
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                left: 15px;
+                top: 50%;
+                z-index: 1;
+                margin-top: -10px;
+                opacity: 1;
+                @include transition(opacity 333ms ease);
+                a.btnDefault {
+                    padding: 0;
+                    background: none;
+                    span{
+                        display: block;
+                        font-size: inherit;
+                        i.icon-ico_search{
+                            font-size: 20px;
+                            &:before{
+                                font-size: 20px;
+                                color:$lDark;
+                            }   
+                        }
+                    }
+                }
+            }
+        }
+        span[id$="lbfkutuArama1"] {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            top: 50%;
+            right: 0;
+            margin-top: -15px;
+            @include transition(opacity .3s ease);
+            opacity: 0;
+            > div{
+                padding: 7px;
+                cursor: pointer;
+                .icon-ico_close, .icon-ico_close:before{
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+
+.searchSuggestDiv{
+    background:$lGray;
+    top: 52px;
+    right:0;
+    width:600px;
+    left: inherit !important;
+    max-width: 600px;
+    border-top: 1px solid #fefefe;
+    .searchSuggestDivHolder{
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+        @include flex;
+        flex-wrap: wrap;
+        @include flexDirection(row);
+        align-items: flex-start;
+        padding:20px 0;
+        .wordSearch{ display: none; }
+        .cat{
+            .suggest_link{
+                > a{
+                    font-family: $bold;
+                    display: inline-block;
+                    font-size: 14px;
+                    padding: 10px 20px 10px 0;
+                    position: relative;
+                    min-width: 140px;
+                    &:after{
+                        font-family: 'icomoon';
+                        content:'\e909';
+                        font-size: 8px;
+                        display: inline-block;
+                        position: absolute;
+                        top: 50%;
+                        right: 12px;
+                        margin-top: -4px;
+                        @include setTransform(rotate(90deg));
+                    }
+                }
+                .fullCatLink, .fullCatImage{
+                    display: none;
+                }
+            }
+        }
+        .prd, .cat{
+            width: 50%;
+            > h3{
+                font-family: $medium;
+                font-size: 12px;
+                margin: 0;
+                padding-bottom: 5px;
+                letter-spacing: 2px;
+                color: $aGray;
+                text-transform: uppercase;
+                small{ display:none; }
+            }
+        }
+        .cat{
+            order: 1;
+        }
+        .prd{
+            order: 2;
+            .sHolder{
+                max-height: 320px;
+                overflow-x: hidden;
+                padding-right: 6px;
+                .suggest_link, .suggest_link_over{
+                    padding: 10px 0;
+                    @include transition(all .2s ease);
+                    cursor: pointer !important;
+                    table{
+                        tbody{
+                            tr{
+                                display: table;
+                                table-layout: fixed;
+                                width: 100%;
+                                min-height: 57px;
+                                th{
+                                    display: inline-block;
+                                    float: left;
+                                    width: 25%;
+                                    padding: 1px;
+                                    border: 1px solid #f1f1f1;
+                                    img{
+                                        max-width:60px;
+                                        width: 100%;
+                                    }
+                                }
+                                td{
+                                   display: none; 
+                                    > span, > span b{
+                                        font-size: 14px;
+                                        font-family: $bold;
+                                        color: #000;
+                                        font-weight: normal;
+                                    }
+                                    &:nth-child(2){
+                                        padding:0 0 0 10px;
+                                        display: inline-block;
+                                        max-height:31px;
+                                        overflow: hidden;
+                                        width: 75%;
+                                        float: left;
+                                        > span{
+                                            display: block;
+                                            font-family: $medium;
+                                        }
+                                    }
+                                    &:nth-child(4), &:nth-child(6){
+                                        display: inline-block;
+                                        float: left;
+                                        span.suggest_urnnormalprice, .suggest_urnprice{
+                                            display: block;
+                                            padding-left:10px;
+                                            padding-top: 5px;
+                                            font-family: $medium;
+                                        }
+                                    }
+                                    &:nth-child(6){
+                                        span{
+                                            color: $aGray;
+                                            text-decoration: line-through;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    &:last-child{
+                        margin-bottom: 0;
+                    }
+                }
+            }
+            ::-webkit-scrollbar {
+                width: 6px;
+            }
+            ::-webkit-scrollbar-track {
+                -webkit-border-radius: 3px;
+                border-radius: 3px;
+                background: rgba(255,255,255,1);
+                -webkit-box-shadow: inset 0 0 6px rgba(255,255,255,0.9);
+                box-shadow: inset 0 0 6px rgba(255,255,255,0.9); 
+            }
+            ::-webkit-scrollbar-thumb {
+                -webkit-border-radius: 3px;
+                border-radius: 3px;
+                background: rgba(0,84,255,1);
+                -webkit-box-shadow: inset 0 0 6px rgba(0,84,255,0.9);
+                box-shadow: inset 0 0 6px rgba(0,84,255,0.9); 
+            }
+            ::-webkit-scrollbar-thumb:window-inactive {
+                background: rgba(0,84,255,1); 
+            }
+        }
+    }
+}
+
+body.search-keyup {
+    .vail.vailSearch{
+        visibility: visible;
+        opacity: .3;
+    }
+}
+
+@media screen and (max-width: 1024px){
+    .mod-mini-search{margin-right: 55px;}
+}
+
+@media screen and (max-width: $breakpointXSM){
+    .mod-mini-search{
+        margin-right: 0;
+        width: 100%;
+        padding: 10px;
+        background: #424242;
+        &-header{ display: none; }
+        &-body{
+            max-width: 100%;
+            overflow: inherit;
+        }
+        .ems-form{
+            .ems-field{
+                input{
+                    padding-left: 45px;
+                    padding-right: 45px;
+                    color: #000;
+                    height: 40px;
+                    line-height: 30px;
+                }
+                &.submit{
+                    top:50%;
+                    left: 10px;
+                    width:30px;
+                    height:30px;
+                    margin-top: -15px;
+                    text-align: center;
+                    a.btnDefault{
+                        padding: 7px 0;
+                        span{
+                            i.icon-ico_search, i.icon-ico_search:before{
+                                font-size: 17px;
+                                @include transition(all 0.2s ease-in-out);
+                            }
+                            i.icon-ico_search:before{color:#000;}
+                        }
+                    }
+                }
+            }
+            span[id$="lbfkutuArama1"]{
+                background: rgba(66,66,66,.9);
+                right: 15px;
+                border-radius: 100%;
+                width: 24px;
+                height: 24px;
+                margin-top: -12px;
+                text-align: center;
+                > div{
+                    padding: 8px 0 5px 0;
+                    .icon-ico_close-mini, .icon-ico_close-mini:before{
+                        font-size: 9px;
+                    }
+                    .icon-ico_close-mini:before{color:#fff;}
+                }
+            }
+        }
+    }
+
+    .searchSuggestDiv{
+        position: fixed !important;
+        top: inherit !important;
+        display: block !important;
+        left: 0 !important;
+        bottom: -100%;
+        background:#fff;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 100%;
+        height: calc(100% - 60px);
+        z-index: 12 !important;
+        @include transition(bottom .5s);
+        transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+        .searchSuggestDivHolder{
+            max-width: 100%;
+            position: absolute;
+            height: calc(100% - 45px);
+            overflow-y: scroll;
+            overflow-x: hidden;
+            @include flexDirection(column);
+            align-items: flex-start;
+            flex-wrap: inherit;
+            padding:  25px 20px 0 20px;
+            .dvTumunuGoster {
+                order: 3;
+                display: block !important;
+                position: fixed;
+                bottom: 0;
+                left:0;
+                width: 100%; 
+            }
+            .cat{
+                .sHolder{padding-bottom:30px;}
+            }
+            .prd, .cat{
+                width: 100%;
+                .sHolder{
+                    max-height: inherit;
+                    overflow-x: inherit;
+                    padding-right: 0;
+                }
+            }
+            .prd{
+                .sHolder{
+                    .suggest_link, .suggest_link_over{
+                        margin-top: 0;
+                        padding: 7px 0;
+                        margin-top: 0;
+                        &:hover{
+                            background: #fff;
+                        }
+                        table{
+                            tbody{
+                                tr{
+                                    td{
+                                        > span, > span b{
+                                            color:#000;
+                                            font-family: $bold;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        &:first-child{
+                            border: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .search-fixed-ready{
+        .mod-mini-search {
+            .ems-form{
+                span[id$="lbfkutuArama1"] {
+                    transition-delay: .5s;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    body.search-keyup {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        overflow: hidden;
+        .vailSearch{
+            display: none !important;
+        }
+        .searchSuggestDiv{
+            bottom: 0;
+            transition-delay: 0s;
+        }
+    }
+
+}

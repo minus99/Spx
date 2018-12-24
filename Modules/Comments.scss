@@ -1,0 +1,500 @@
+.yorumRating, .yorumRating a:hover,
+.yorumRating a:active, .yorumRating a:focus,
+.yorumRating .puanSelected, .current-rating,
+.star-rating { background:url(#{$baseHref + "/images/frontend/star-icons-default.png"}) repeat-x; }
+
+.yorumRating,
+.star-rating {width: 80px; height: 15px; overflow: hidden; background-position: left bottom; position:relative; float:left;}
+
+.yorumRating a,
+.yorumRating .puanSelected,
+.current-rating,
+.star-rating {position:absolute; top:0; left:0; display:block; text-indent:-999em; height:15px; line-height: 15px; outline: none; overflow: hidden; border: none;}
+
+.yorumRating .puanSelected, .current-rating {z-index: 1; background-position: top left; width:0%;}
+.yorumRating a:hover, .yorumRating a:active, .yorumRating a:focus {background-position: top left; }
+.yorumRating a.puan1 {width:20%; z-index:6;}
+.yorumRating a.puan2 {width:40%; z-index:5;}
+.yorumRating a.puan3 {width:60%; z-index:4;}
+.yorumRating a.puan4 {width:80%; z-index:3;}
+.yorumRating a.puan5 {width:100%; z-index:2;}
+
+
+.yorumOrtalamaPuan{
+    .tableYorumListe_yorumMesaj{ display: none; }
+}
+
+.yorumListe_main{
+    padding: 10px 0 30px 0;
+    @include flex();
+    @include flexDirection(column);
+    flex-wrap: wrap;
+    width: 100%;
+    &:empty{
+        display: none;
+    }
+    .yorumOzet{
+        > span,
+        .yapilanYorum{display:none;}
+        .yorumOrtalamaPuan{
+            @include flex();
+            flex-wrap: wrap;
+            @include flexDirection(column);
+            align-items: center;
+            > span{
+                font-family:$bold;
+                font-size:20px;
+                &:first-child{display:none;}
+                &:last-child{order:1;}
+            }
+            .star-rating{
+                order:2;
+                margin-top: 10px;
+            }
+            .yorumRating, .yorumRating a:hover,
+            .yorumRating a:active, .yorumRating a:focus,
+            .yorumRating .puanSelected, .current-rating,
+            .star-rating { background:url(#{$baseHref + "/images/frontend/star-icons-medium.png"}) repeat-x; }
+
+            .yorumRating,
+            .star-rating {width: 125px; height: 24px; overflow: hidden; background-position: bottom left; position:relative; float:left;}
+
+            .yorumRating a,
+            .yorumRating .puanSelected,
+            .current-rating,
+            .star-rating {height: 24px; line-height: 24px;}
+            
+            .current-rating { background-position: top left;}
+
+        }
+        .yorumYap{ text-align: center; }
+        a.btnYorumYap{
+            color:$btnAlternateColor;
+            margin-top: 20px;
+            text-transform: inherit;
+            background: none;
+            width: auto;
+            height: auto;
+            font-size: 14px;
+            font-family: $medium;
+            padding: 10px 20px 10px 10px;
+            margin-bottom: 20px;
+            i{
+                position: absolute;
+                right: 5px;
+                top: 50%;
+                margin-top: -4px;
+            }
+            i, i:before{
+                font-size: 7px;
+            }
+        }
+    }
+
+    .yorumFiltre{
+        display: none;
+    }
+
+    .yorumListe{
+        .tableTitleYorumListe,
+        .olumsuzYorumBaslik,
+        .olumsuzYorumListe{display:none;}
+
+        .yorumListeDefault {
+            .olumluYorumBaslik{ display: none; }
+        }
+        span[id$="lbfYORUM_YOK"]{display: none;}
+    }
+
+    .yorumEkle{
+        span[id$="lbfYORUM_EKLE"]{
+            display: none;
+        }
+        .dvKullaniciAdi{
+            text-align: left;
+            font-family: $medium;
+            font-size: 17px;
+            padding-bottom: 20px;
+            padding-top: 20px;
+            max-width: 325px;
+            margin: 0 auto;
+            > span{
+                &:first-child{
+                    &:after{
+                        content:':';
+                        display: inline-block;
+                        padding-right: 5px;
+                    }
+                }
+            }
+        }
+        .dvYorumBaslik{display: none;}
+        .dvYorum, .dvYorumPuan{
+            max-width: 325px;
+            width: 100%;
+            margin: 20px auto 0 auto;
+            div{
+                input{
+                    width: 100% !important;
+                    height: 40px;
+                    line-height: 28px;
+                    margin-top: 10px;
+                }
+                textarea{
+                    width: 100% !important;
+                    resize: none;
+                    height: 100px;
+                    line-height: 1;
+                    margin-top: 10px;
+                }
+            }
+        }
+        .dvYorumPuan{
+            .yorumRating{ float: inherit; }
+            .spnYorumPuan{ margin-right: 15px; }
+            .yorumRating, .spnYorumPuan{
+                display: inline-block;
+                vertical-align: middle;
+            }
+        }
+        .btnYorumGonder{
+            text-align: center;
+            .yorumDurum{
+                width: 100%;
+                max-width: 325px;
+                padding: 15px;
+                background: green;
+                margin: 15px auto 0 auto;
+                order: 20;
+                border-radius: 2px;
+                color: #fff;
+                &:empty{
+                    display: none;
+                }
+            }
+            a.btnYorumGonder{
+                max-width: 325px;
+                margin-top: 30px;
+            }
+        }
+    }
+
+    > span[id$="lbfMDLHEADER_YORUMLAR"]{ display: block !important; }
+    
+    .yorum-baslik{
+        font-family: $bold;
+        color: #000;
+        font-size: 30px;
+        margin:10px 0 10px 0;
+        text-align: center;
+        letter-spacing: -0.4px;
+    }
+
+    > div{
+        margin: $marginAuto;
+        width: 100%;
+        max-width: 880px;
+        color: #000;
+    }
+    .yorumListe{
+        .yorumListeTumu{
+            border-top:1px solid $lGray;
+        }
+        .yorumListeTumuBaslik{display: none;}
+        .yorum_main {
+            padding-top: 40px;
+            padding-bottom: 40px;
+            border-bottom:1px solid $lGray; 
+            position: relative;
+            &:before, &:after{
+                content:'';
+                display: table;
+                width: 100%;
+                height: 0;
+                font-size: 0;
+                overflow: hidden;
+                clear: both;
+            }
+            .kullaniciBilgi, .adminBilgi{
+                width: 100%;
+                line-height: 25px;
+                > div{
+                    &:empty{ display: none; }
+                }
+                .tableYorumListe_yorumProfilFoto,
+                .tableYorumListe_yorumUyelikTar,
+                .tableYorumListe_yorumAdres,
+                .tableYorumListe_yorumFirmaAdi{
+                    display: none;
+                }
+            }
+            .kullaniciBilgi{
+                .tableYorumListe_yorumTarih{
+                    position: absolute;
+                    right: 0;
+                    top: 45px;
+                    span{
+                        font-size: 15px;
+                        color: #818181;
+                    }
+                }
+                .tableYorumListe_yorumAdSoyad{
+                    color: #000;
+                    font-family: $bold;
+                    font-size: 22px;
+                    padding-bottom: 20px;
+                    padding-right: 90px;
+                }
+                .tableYorumListe_yorumYas{
+                    font-size: 15px;
+                    color: #818181;
+                    span{display: inline-block; padding-right: 5px;}
+                }
+            }
+            .yorumBilgi{
+                .tableYorumListe_yorumDogruBul,
+                .tableYorumListe_yorumEvetHayir,
+                .tableYorumListe_yorumOnay{
+                    margin-top: 20px;
+                }
+                .tableYorumListe_yorumOnay{
+                    display: none;
+                }
+                .tableYorumListe_yorumBaslik{
+                    order: 1;
+                }
+                .tableYorumListe_uyeRating{
+                    order: 2;
+                    padding: 5px 0 15px 0;
+                    .tableYorumListe_ratingbar{ position: relative;}
+                    > span{ display:none; }
+                }
+                .tableYorumListe_yorumMesaj{
+                    order: 3;
+                }
+                .tableYorumListe_yorumDogruBul,
+                .tableYorumListe_yorumEvetHayir{
+                    display: inline-block;
+                    vertical-align: bottom;
+                }
+                .tableYorumListe_yorumDogruBul{
+                    order: 4;
+                    width: 30%;
+                    span{
+                        color: $aGray;
+                        font-size: 15px;
+                    }
+                }
+                .tableYorumListe_yorumEvetHayir{
+                    width: 70%;
+                    order: 5;
+                }
+            }
+            .yorumBilgi, .adminYorumBilgi{
+                min-height: 50px;
+                width: auto;
+                @include flex();
+                flex-wrap: wrap;
+                align-items: baseline;
+                .tableYorumListe_yorumBaslik{
+                    font-family: $bold;
+                    font-size: 22px;
+                    padding: 5px 85px 5px 0;
+                    width: 100%;
+                    display: none;
+                }
+                .tableYorumListe_yorumMesaj{
+                    font-size: 17px;
+                    padding: 5px 0;
+                    line-height: 20px;
+                    width: 100%;
+                }
+                .tableYorumListe_yorumEvetHayir{
+                    table{
+                        width: 100%;
+                        display: table !important;
+                        text-align: left;
+                    }
+                    .btnDefault {
+                        width: auto;
+                        > span{
+                            display: inline-block;
+                            vertical-align: bottom;
+                            font-family: $regular;
+                            i, i:before{
+                                font-size: 22px;
+                            }
+                            i.icon-ico_like{
+                                &:before{
+                                    color: $btnAlternateColor;
+                                }
+                            }
+                            i.icon-ico_unlike{
+                                &:before{
+                                    color: $aGray;
+                                }
+                            }
+                        }
+                        span.yorum-sayisi{
+                            margin-left:10px;
+                            color: $aGray;
+                            &:before,&:after{
+                                display: inline-block;
+                                position: relative;
+                                top: -1px;
+                            }
+                            &:before{
+                                content:'(';
+                            }
+                            &:after{
+                                content:')';
+                            }
+                        }
+                        &:first-child{
+                            margin-right: 10%;
+                        }
+                    }
+                }
+            }
+            .adminYorum{
+                display: none;
+            }
+            .adminYorumBilgi{margin-bottom:0;}
+        }
+    }
+    div.yorumEkle{
+        .pageErrorDefault {
+            text-align: center;
+            a#lnkYorumYaz, a#lnkIlkYorum{
+                background: $btnColor;
+                color: #fff;
+                margin-top: 30px;
+                padding: 16px 20px;
+                display: inline-block;
+                font-family: bold;
+                font-size: 17px;
+                margin-bottom: 20px;
+                &:hover{
+                    background: $btnAlternateColor;
+                }
+            }
+            a#lnkIlkYorum{
+                margin-bottom: 0;
+                margin-top: 20px;
+                min-width: 200px;
+            }
+            a.btnLogin{
+                display: none;
+                background: $btnColor;
+                color: #fff;
+                max-width: 225px;
+                margin-top: 50px;
+                &:hover{
+                    background: $btnAlternateColor;
+                }
+            }
+        }
+    }
+}
+
+.ems-logoff{
+    .yorumListe_main {
+        .yorumOzet{
+            .yorumYap{
+                display: none;
+            }
+            .yorumOrtalamaPuan{
+                
+            }
+        }
+        .yorumListe{
+            .yorumListeTumu{border:none;}
+        }
+    }
+}
+
+@media screen and (max-width: $breakpointXSM){
+    .yorumListe_main{
+        padding: 0 10px;
+        .yorum-baslik{
+            display: none;
+        }
+        .yorumOzet{
+            .yorumOrtalamaPuan {
+                .star-rating{
+                    margin-top: 0;
+                }
+            }
+            a.btnYorumYap{
+                margin-top: 15px;
+                margin-bottom: 10px;
+            }
+        }
+        .yorumListe{
+            .yorum_main {
+                padding: 20px 10px;
+                position: relative;
+                .kullaniciBilgi, .adminBilgi{
+                    float: none;
+                    width: 100%;
+                    > div{
+                        text-align: left; 
+                    }
+                }
+                .kullaniciBilgi{
+                    text-align: left;
+                    padding-top: 0;
+                    padding-bottom: 15px;
+                    position: relative;
+                    .tableYorumListe_yorumAdSoyad{
+                        padding-bottom: 0;
+                        font-size: 18px;
+                    }
+                    .tableYorumListe_yorumTarih{
+                        top: 2px;
+                        right: 10px;
+                        span{font-size: 12px;}
+                    }
+                }
+                .yorumBilgi, .adminYorumBilgi{
+                    margin-left: 0;
+                    > div{
+                        text-align: left; 
+                    }
+                    .tableYorumListe_yorumBaslik{
+                        margin-bottom: 5px;
+                        padding-right: 0;
+                        font-size: 18px;
+                    }
+                    .tableYorumListe_yorumEvetHayir{
+                        table{
+                            text-align: center;
+                        }
+                    }
+                    .tableYorumListe_yorumMesaj{
+                        font-size: 15px;
+                        color: #3c3c3c;
+                    }
+                }
+                .yorumBilgi{
+                    .tableYorumListe_yorumDogruBul{
+                        width: 45%;
+                    }
+                    .tableYorumListe_yorumEvetHayir{
+                        width: 55%;
+                    }
+                }
+            }
+        }
+        .yorumEkle{
+            padding: 0 10px;
+            .dvYorumBaslik, .dvYorum, .dvYorumPuan{
+                max-width: 100%;
+            }
+            .dvKullaniciAdi{
+                font-size: 15px;
+                padding-bottom: 0;
+            }
+        }
+    }
+}

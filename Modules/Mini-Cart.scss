@@ -1,0 +1,284 @@
+.mod-mini-cart {
+    float: right;
+    width: 130px;
+    &-header{
+        .ems-cart-info{
+            cursor: pointer;
+            font-family: $regular;
+            font-size: 15px;
+            padding: 11px 20px;
+            text-align: center;
+            min-height: 40px;
+            color: #000;
+            @include transition(all 333ms ease);
+            > span[id$="lbfKUTU_SEPET"]{
+                display: table;
+                width: 100%;
+                position: relative;
+                > *{
+                    display: table-cell;
+                    vertical-align: middle;
+                }
+                .icon-ico_mini-cart, .icon-ico_mini-cart:before{font-size:18px;}
+                .icon-ico_mini-cart:before{
+                    margin-right: 15px;
+                }
+                .ems-clone-mini-quatity{
+                    position: absolute;
+                    left: 20px;
+                    top: -6px;
+                    letter-spacing: -0.4px;
+                    font-family: $bold;
+                    font-size: 15px;
+                }
+                > span{font-weight:600;}
+            }
+            span{
+                i.icon-ico_basket{ display: none; }
+            }
+            span[id$="lbfKUTU_URUN"]{ display: none; }
+            span[id$="lblUrunAdet"]{
+                display: none;
+                &:before, &:after{ position: relative; top: -1px; }
+                &:before{
+                    content: "(";
+                }
+                &:after{
+                    content: ")";
+                }
+            }
+        }
+    }
+    &-body{
+        background: $lGray;
+        width: 350px;
+        position: absolute;
+        top: 52px;
+        right: 0;
+        z-index: 10;
+        display: none;
+        .ems-col{
+            width: 100%;
+            &-total,
+            &-link{
+                display: none;
+            }
+            &-total{
+                margin-top: 20px;
+                padding: 20px;
+                border-top:1px solid #d8d8d8;
+                > span{
+                    width: 50%;
+                    display: inline-block;
+                    vertical-align: middle;
+                    color: #000;
+                    s{ display: none; }
+                }
+                span[id$="lbfkutuSepet1"] {
+                    text-align: left;
+                    font-family: $medium;
+                    font-size: 15px;
+                    b{font-weight:normal;}
+                }
+                span[id$="lblUrunTutari"] { 
+                    text-align: right;
+                    font-family: $bold;
+                    font-size: 24px;
+                    &:before {
+                        content: 't';
+                        font-family: "tl";
+                        margin-right: 5px;
+                        display: none;
+                    }
+                }
+            }
+            &-link{
+                padding: 0 20px 20px 20px;
+                > a{
+                    padding-top: 20px;
+                    padding-bottom: 20px;
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .kutuSepet_urunYok{
+        > span{
+            .wrapper{
+                text-align: center;
+                padding: 20px;
+                .icon-ico_mini-cart{
+                    font-size: 70px;
+                    
+                    &:before{
+                        font-size: 70px;
+                    }
+                }
+                .cart-empty-text{
+                    font-family: $regular;
+                    font-size: 15px;
+                    margin: 25px 0 0 0;
+                }
+            }
+        }
+    }
+    .kutuSepet_icerik{
+        > div{
+            border-top:1px solid $border;
+            padding: 20px;
+        }
+        > div:first-child{
+            border: none;
+        }
+        .ems-col{
+            &:before, &:after{
+                content:'';
+                width: 100%;
+                height: 0;
+                font-size: 0;
+                clear: both;
+                display: table;
+            }
+            > div{ 
+                float: left;
+                * {
+                    color: #000;
+                }
+                .cart-prd-remove{
+                    position: absolute;
+                    top: 10px;
+                    right: -10px;
+                    width: 10px;
+                    height: 10px;
+                    z-index: 1;
+                    a {
+                        i{
+                            font-size: 10px;
+                            &:before{
+                                font-size: 10px;
+                            }
+                        }
+                        span{
+                            display: none;
+                        }
+                    }
+                }
+            }
+            .cart-prd-code,
+            .cart-prd-quantity{
+                display: none;
+            }
+            .cart-prd-name{
+                padding-top: 2px;
+                float: left;
+                font-family: $regular;
+                letter-spacing: -0.3px;
+                font-size: 15px;
+                max-width: 50%;
+                width: 50%;
+                span{
+                    display: inline-block;
+                    max-height: 50px;
+                    overflow: hidden;
+                }
+            }
+            .cart-prd-price{
+                float: right;
+                font-family: $medium;
+                letter-spacing: -0.4px;
+                font-size: 17px;
+            }
+            .cart-prd-left{
+                width: 60px;
+                img {
+                    width: 100%;
+                }
+            }
+            .cart-prd-right{
+                width: 245px;
+                padding: 10px 10px 0 10px;
+                position: relative;
+                min-height: 60px;
+                max-height: 60px;
+            }
+            .iControl{
+                text-align: center;
+                margin-right: 20px;
+                a {
+                    display: inline-block;
+                    border: 1px solid $inputborder;
+                    padding: 7px;
+                    span{ display: none; }
+                    i, i:before{ font-size: 9px; }
+                }
+                span{ border-top:1px solid $inputborder; border-bottom:1px solid $inputborder; min-width:50px; text-align:center; padding:3px 3px 3px 3px; font-family: $bold; font-size: 15px; }
+                a, span{ display:inline-block; vertical-align:middle; min-height: 25px; }
+            }
+        }
+    }
+    &-footer{
+        display: none;
+    }
+}
+
+body.basket-empty{
+    .mod-mini-cart {
+        &-body{
+            .ems-col{
+                &.ems-col-link-logout{
+                    display: block !important;
+                    margin-top: 20px;
+                    border-top: 1px solid #d8d8d8;
+                    padding: 20px 0 0 0;
+                }
+                &.ems-col-total,
+                &.ems-col-link{
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+body.basket-full{
+    .mod-mini-cart {
+        &-body{
+            .ems-col{
+                &.ems-col-total,
+                &.ems-col-link{
+                    display: block;
+                }
+            }
+        }
+    } 
+}
+
+body.mini-cart-ready{
+    .mod-mini-cart{
+        &-body{
+            display: block;
+        }
+    }
+    .vailCart{ opacity: .3; visibility: visible; }
+}
+
+
+@media screen and (max-width: 1024px){
+    .mod-mini-cart{
+        width: 55px;
+        &-header{
+            .ems-cart-info{
+                > span[id$="lbfKUTU_SEPET"]{
+                    > span{display:none;}
+                }
+            }
+        }
+    }  
+}
+
+@media screen and (max-width: $breakpointXSM){
+    .mod-mini-cart{
+        display: none !important;
+    }
+}
